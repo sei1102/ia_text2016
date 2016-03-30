@@ -301,6 +301,12 @@ Arduino、スイッチ、抵抗、LED を用いて、
        
 \end{itemize}
 
+\newcounter{nombre}
+\setcounter{nombre}{1}
+\subsection*{TRY\thenombre: スイッチが押されたら LED が点灯する回路を作成する}
+\refstepcounter{nombre}
+\label{base}
+
 図 \ref{circuit} を参考にして回路を組んでみましょう。
 
 \begin{figure}[h!]
@@ -418,7 +424,9 @@ setup と draw を用いるとアニメーションなどの動的な表現が�
 \end{lstlisting}
 
 
-\subsection*{TRY1: Processing でベースとなるプログラムを作成する}
+\subsection*{TRY\thenombre: Processing でベースとなるプログラムを作成する}
+\refstepcounter{nombre}
+
 \begin{enumerate}
  \item ウィンドウサイズを幅 300 pixel、高さ 300 pixel に
  \item ウィンドウの背景色を黒に
@@ -438,8 +446,11 @@ setup と draw を用いるとアニメーションなどの動的な表現が�
  }
 \end{lstlisting}
 
-\subsection*{TRY2: マウスボタンがクリックされたら図形を表示する}
-TRY1 で作ったプログラムを改造し、マウスが押されたときにウィンドウに図形が表示されるようにします。
+\subsection*{TRY\thenombre: マウスボタンがクリックされたら図形を表示する}
+\label{mousePressed}
+\refstepcounter{nombre}
+
+TRY\ref{base} で作ったプログラムを改造し、マウスが押されたときにウィンドウに図形が表示されるようにします。
 
 Processing では、あらかじめ用意されている「mousePressed」という変数を用いることで、マウスのクリック動作を簡単に検出することができます。
 \begin{lstlisting}
@@ -451,8 +462,10 @@ Processing では、あらかじめ用意されている「mousePressed」とい
 \end{lstlisting}
 
 
-\subsection*{TRY3: マウスポインタで図形を操作する}
-TRY2 で作ったプログラムを改造し、マウスポインタの位置に合わせて図形が表示されるようにします。
+\subsection*{TRY\thenombre: マウスポインタで図形を操作する}
+\refstepcounter{nombre}
+
+TRY\ref{mousePressed} で作ったプログラムを改造し、マウスポインタの位置に合わせて図形が表示されるようにします。
 
 Processing では、あらかじめ用意されている「mouseX」「mouseY」という変数を用いることで、マウスポインタの x 座標と y 座標を取得できます。
 
