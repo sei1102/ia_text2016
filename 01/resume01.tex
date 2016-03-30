@@ -133,151 +133,6 @@
  \end{itemize}
 \end{itembox}
 
-\subsection*{ブレッドボード}
-通常の電子工作では、ハンダ付けなどを行いますが、この実習では部品の付け外しが簡単なブレッドボードを使います。このブレッドボードは、ソケット(穴)に部品を差し込むことで電子回路が作ることが出来ます。
-１つの部品は必ず２列にまたいで、差すように心掛けましょう。１列上では、電流が流れないので、気をつけましょう。
-
-
-\section{Processing の基礎}
-本実習では Processing\footnote{\url{http://processing.org}} というプログラミング言語を用います。
-Processing は、Java を単純化し、グラフィック機能に特化した言語です。
-
-Processing による基本的なプログラミングを行います。
-なお、メニューバーの Help → Reference でインターネットブラウザが起動し、より詳しい説明が確認できますので、そちらも参考にしてください。
-ただし英語表記です。
-Processing にはあらかじめサンプルコード(お手本になるプログラム)が、たくさん用意されているので、それを動かしてみてどんなことができるかを見ておくのも良いかもしれません。
-サンプルコードは、メニューバーの File → Example から見ることができます。
-
-\begin{figure}[h!]
- \centering
- \includegraphics[width=0.5\columnwidth]{img/processing_ide.eps}
- % \caption{Processing の IDE (統合開発環境)}
-\end{figure}
-
-
-\subsection*{基本的な図形を描く}
-
-\begin{itemize}
- \item \textbf{四角形を書く}: rect(x, y, w, h);
-
-       x = x座標、
-       y = y座標、
-       w = 四角形の幅、
-       h = 四角形の高さ
-
- \item \textbf{円を書く}: ellipse(x, y, w, h);
- \item \textbf{線を書く}: line(x1, y1, x2, y2);
-       
-       x1 = 始点のx座標、
-       y1 = 始点のy座標、
-       x2 = 終点のx座標、
-       y2 = 終点のy座標
-
- % \item \textbf{三角形を書く}: triangle(x1, y1, x2, y2, x3, y3);
-\end{itemize}
-
-
-\subsection*{図形の色を変える}
-% \begin{tabular}{lll}
-%  \textbf{図形の色を変える:} & fill(r, g, b); & r, g, b をそれぞれ 256 段階で指定 \\
-%  \textbf{図形の色を消す:} & noFill(); &  \\ 
-%  \textbf{線の色を変える:} & stroke(r, g, b); &  \\ 
-%  \textbf{線の色を消す:} & noStroke(); &  \\ 
-%  % \textbf{線の幅を指定する:} & strokeWeight(weight); & weight = 線の太さ \\ 
-%  \textbf{ウィンドウの背景色を変える:} & background(r, g, b); &  \\ 
-% \end{tabular}
-Processing で図形などの色を指定したいときは、Red、Green、Blue をそれぞれ 256 段階で指定します。
-\begin{lstlisting}
- // 四角形を赤で表示する
- fill(255, 0, 0);        // 赤は r = 255, g = 0, b = 0
- rect(10, 10, 100, 50);
-\end{lstlisting}
-また、グレースケールで指定する方法もあります。
-\begin{lstlisting}
- fill(0);               // 0 (黒) から 255 (白) で指定
-\end{lstlisting}
-白から黒の色で指定したいときはこちらの方が楽です。
-
-\begin{itemize}
- \item \textbf{図形の色を変える}: fill(r, g, b);
- \item \textbf{図形の色を消す}: noFill();
- \item \textbf{線に色をつける}: stroke(r, g, b);
- \item \textbf{線の色を消す}: noStroke();
- \item \textbf{ウィンドウの背景色を変える}: background(r, g, b);
-\end{itemize}
-
-
-\subsection*{初期化とループ処理}
-Processing では、プログラムを実行時に setup 関数が 1 度実行され (初期化) 、その後 draw関数 が繰り返されます (ループ処理)。
-setup と draw を用いるとアニメーションなどの動的な表現ができます。
-
-\begin{lstlisting}
- void setup(){
-   // 初期化の処理をここに書く
-   // プログラム開始時に1度だけ実行される
-   // size(w, h); などはここへ
- }
-
- void draw(){
-   // 繰り返したい処理をここに書く
-   // setup()が実行された後にプログラムが終了するまで繰り返される
- }
-\end{lstlisting}
-
-
-\subsection*{TRY1: Processing でベースとなるプログラムを作成する}
-\begin{enumerate}
- \item ウィンドウサイズを幅 300 pixel、高さ 300 pixel に
- \item ウィンドウの背景色を黒に
- \item 幅 100 pixel、幅 100 pixel の円を青色で表示
-\end{enumerate}
-
-\begin{lstlisting}
- void setup() {
-   size(???, ???);
- }
-
- void draw() {
-   background(???, ???, ???);
-
-   fill(???, ???, ???);
-   ellipse(???, ???, ??? ???);
- }
-\end{lstlisting}
-
-\subsection*{TRY2: マウスボタンがクリックされたら図形を表示する}
-TRY1 で作ったプログラムを改造し、マウスが押されたときにウィンドウに図形が表示されるようにします。
-
-Processing では、あらかじめ用意されている「mousePressed」という変数を用いることで、マウスのクリック動作を簡単に検出することができます。
-\begin{lstlisting}
- if (mousePressed) {
-   // マウスボタンを押したときの処理
- } else {
-   // マウスボタンを押していないときの処理
- }
-\end{lstlisting}
-
-
-\subsection*{TRY3: マウスポインタで図形を操作する}
-TRY2 で作ったプログラムを改造し、マウスポインタの位置に合わせて図形が表示されるようにします。
-
-Processing では、あらかじめ用意されている「mouseX」「mouseY」という変数を用いることで、マウスポインタの x 座標と y 座標を取得できます。
-
-
-\begin{lstlisting}
- void setup() {
-   size(300, 300);
- }
-
- void draw() {
-   if (mousePressed) {
-      ellipse(mouseX, mouseY, 32, 32);
-   }
- }
-\end{lstlisting}
-
-
-
 \section{電子回路の基礎}
 
 \subsection*{電気、電流、抵抗のおさらい}
@@ -439,6 +294,11 @@ Arduino、スイッチ、抵抗、LED を用いて、
        極性があるので注意! (電流を流す方向を間違えると壊れます...)
        足が長く、先端の小さいほうがアノード (プラス) 、足が短く、先端の大きいほうがカソード (マイナス) です (図\ref{figure:LED}参照) 。
        
+ \item \textbf{ブレッドボード} 
+ 
+通常の電子工作では、ハンダ付けなどを行いますが、この実習では部品の付け外しが簡単なブレッドボードを使います。このブレッドボードは、ソケット(穴)に部品を差し込むことで電子回路が作ることが出来ます。
+１つの部品は必ず２列にまたいで、差すように心掛けましょう。１列上では、電流が流れないので、気をつけましょう。
+       
 \end{itemize}
 
 図 \ref{circuit} を参考にして回路を組んでみましょう。
@@ -470,5 +330,143 @@ Arduino、スイッチ、抵抗、LED を用いて、
   \caption{タクトスイッチ}
   \label{figure:switch}
 \end{figure}
+
+\section{Processing の基礎}
+本実習では Processing\footnote{\url{http://processing.org}} というプログラミング言語を用います。
+Processing は、Java を単純化し、グラフィック機能に特化した言語です。
+
+Processing による基本的なプログラミングを行います。
+なお、メニューバーの Help → Reference でインターネットブラウザが起動し、より詳しい説明が確認できますので、そちらも参考にしてください。
+ただし英語表記です。
+Processing にはあらかじめサンプルコード(お手本になるプログラム)が、たくさん用意されているので、それを動かしてみてどんなことができるかを見ておくのも良いかもしれません。
+サンプルコードは、メニューバーの File → Example から見ることができます。
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.5\columnwidth]{img/processing_ide.eps}
+ % \caption{Processing の IDE (統合開発環境)}
+\end{figure}
+
+
+\subsection*{基本的な図形を描く}
+
+\begin{itemize}
+ \item \textbf{四角形を書く}: rect(x, y, w, h);
+
+       x = x座標、
+       y = y座標、
+       w = 四角形の幅、
+       h = 四角形の高さ
+
+ \item \textbf{円を書く}: ellipse(x, y, w, h);
+ \item \textbf{線を書く}: line(x1, y1, x2, y2);
+       
+       x1 = 始点のx座標、
+       y1 = 始点のy座標、
+       x2 = 終点のx座標、
+       y2 = 終点のy座標
+
+ % \item \textbf{三角形を書く}: triangle(x1, y1, x2, y2, x3, y3);
+\end{itemize}
+
+
+\subsection*{図形の色を変える}
+% \begin{tabular}{lll}
+%  \textbf{図形の色を変える:} & fill(r, g, b); & r, g, b をそれぞれ 256 段階で指定 \\
+%  \textbf{図形の色を消す:} & noFill(); &  \\ 
+%  \textbf{線の色を変える:} & stroke(r, g, b); &  \\ 
+%  \textbf{線の色を消す:} & noStroke(); &  \\ 
+%  % \textbf{線の幅を指定する:} & strokeWeight(weight); & weight = 線の太さ \\ 
+%  \textbf{ウィンドウの背景色を変える:} & background(r, g, b); &  \\ 
+% \end{tabular}
+Processing で図形などの色を指定したいときは、Red、Green、Blue をそれぞれ 256 段階で指定します。
+\begin{lstlisting}
+ // 四角形を赤で表示する
+ fill(255, 0, 0);        // 赤は r = 255, g = 0, b = 0
+ rect(10, 10, 100, 50);
+\end{lstlisting}
+また、グレースケールで指定する方法もあります。
+\begin{lstlisting}
+ fill(0);               // 0 (黒) から 255 (白) で指定
+\end{lstlisting}
+白から黒の色で指定したいときはこちらの方が楽です。
+
+\begin{itemize}
+ \item \textbf{図形の色を変える}: fill(r, g, b);
+ \item \textbf{図形の色を消す}: noFill();
+ \item \textbf{線に色をつける}: stroke(r, g, b);
+ \item \textbf{線の色を消す}: noStroke();
+ \item \textbf{ウィンドウの背景色を変える}: background(r, g, b);
+\end{itemize}
+
+
+\subsection*{初期化とループ処理}
+Processing では、プログラムを実行時に setup 関数が 1 度実行され (初期化) 、その後 draw関数 が繰り返されます (ループ処理)。
+setup と draw を用いるとアニメーションなどの動的な表現ができます。
+
+\begin{lstlisting}
+ void setup(){
+   // 初期化の処理をここに書く
+   // プログラム開始時に1度だけ実行される
+   // size(w, h); などはここへ
+ }
+
+ void draw(){
+   // 繰り返したい処理をここに書く
+   // setup()が実行された後にプログラムが終了するまで繰り返される
+ }
+\end{lstlisting}
+
+
+\subsection*{TRY1: Processing でベースとなるプログラムを作成する}
+\begin{enumerate}
+ \item ウィンドウサイズを幅 300 pixel、高さ 300 pixel に
+ \item ウィンドウの背景色を黒に
+ \item 幅 100 pixel、幅 100 pixel の円を青色で表示
+\end{enumerate}
+
+\begin{lstlisting}
+ void setup() {
+   size(???, ???);
+ }
+
+ void draw() {
+   background(???, ???, ???);
+
+   fill(???, ???, ???);
+   ellipse(???, ???, ??? ???);
+ }
+\end{lstlisting}
+
+\subsection*{TRY2: マウスボタンがクリックされたら図形を表示する}
+TRY1 で作ったプログラムを改造し、マウスが押されたときにウィンドウに図形が表示されるようにします。
+
+Processing では、あらかじめ用意されている「mousePressed」という変数を用いることで、マウスのクリック動作を簡単に検出することができます。
+\begin{lstlisting}
+ if (mousePressed) {
+   // マウスボタンを押したときの処理
+ } else {
+   // マウスボタンを押していないときの処理
+ }
+\end{lstlisting}
+
+
+\subsection*{TRY3: マウスポインタで図形を操作する}
+TRY2 で作ったプログラムを改造し、マウスポインタの位置に合わせて図形が表示されるようにします。
+
+Processing では、あらかじめ用意されている「mouseX」「mouseY」という変数を用いることで、マウスポインタの x 座標と y 座標を取得できます。
+
+
+\begin{lstlisting}
+ void setup() {
+   size(300, 300);
+ }
+
+ void draw() {
+   if (mousePressed) {
+      ellipse(mouseX, mouseY, 32, 32);
+   }
+ }
+\end{lstlisting}
 
 \end{document}
