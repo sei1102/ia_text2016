@@ -318,7 +318,7 @@ Arduino、スイッチ、抵抗、LED を用いて、
        
  \item \textbf{ブレッドボード} 
  
-通常の電子工作では、ハンダ付けなどを行いますが、この実習では部品の付け外しが簡単なブレッドボードを使います。このブレッドボードは、ソケット(穴)に部品を差し込むことで電子回路を作ることができます。穴はブレットボードの内部でつながっています。図\ref{mechanism_of_the_breadboard}のように赤色の線と青色の線の下の一列の穴は横方向に電気的につながっています。黒い線の下の一列の穴は縦方向に電気的につながっています。一般的に、青色の線の下の一列の穴はGNDライン、赤色の線の下の一列の穴は電源ラインと呼ばれています。
+通常の電子工作では、ハンダ付けなどを行いますが、この実習では部品の付け外しが簡単なブレッドボードを使います。このブレッドボードは、ソケット(穴)に部品を差し込むことで電子回路を作ることができます。穴はブレットボードの内部でつながっています。図\ref{figure:mechanism_of_the_breadboard}のように赤色の線と青色の線の下の一列の穴は横方向に電気的につながっています。黒い線の下の一列の穴は縦方向に電気的につながっています。一般的に、青色の線の下の一列の穴はGNDライン、赤色の線の下の一列の穴は電源ラインと呼ばれています。
 
 \begin{figure}[htb]
   \centering
@@ -363,10 +363,9 @@ Processing にはあらかじめサンプルコード(お手本になるプロ�
 
 \begin{figure}[h!]
  \centering
- \includegraphics[width=0.5\columnwidth]{processing_ide.eps}
+ \includegraphics[width=0.425\columnwidth]{processing_ide.eps}
  % \caption{Processing の IDE (統合開発環境)}
 \end{figure}
-
 
 \subsection*{基本的な図形を描く}
 
@@ -378,7 +377,57 @@ Processing にはあらかじめサンプルコード(お手本になるプロ�
        w = 四角形の幅、
        h = 四角形の高さ
 
+\begin{figure}[htbp]
+ \begin{minipage}{0.325\hsize}
+  \begin{center}
+   \includegraphics[width=40mm]{Processing_img1-3.eps}
+  \end{center}
+ \end{minipage}
+ \begin{minipage}{0.325\hsize}
+ \begin{center}
+  \includegraphics[width=40mm]{Processing_img1-1.eps}
+ \end{center}
+ \end{minipage}
+ \begin{minipage}{0.325\hsize}
+ \begin{center}
+  \includegraphics[width=40mm]{Processing_img1-2.eps}
+ \end{center}
+ \end{minipage}
+\end{figure}
+
  \item \textbf{円を書く}: ellipse(x, y, w, h);
+
+\begin{figure}[htbp]
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=40mm]{Processing_img1-6.eps}
+  \end{center}
+ \end{minipage}
+ \begin{minipage}{0.5\hsize}
+ \begin{center}
+  \includegraphics[width=40mm]{Processing_img1-8.eps}
+ \end{center}
+ \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+ \begin{minipage}{0.325\hsize}
+  \begin{center}
+   \includegraphics[width=40mm]{Processing_img1-4.eps}
+  \end{center}
+ \end{minipage}
+ \begin{minipage}{0.325\hsize}
+ \begin{center}
+  \includegraphics[width=40mm]{Processing_img1-5.eps}
+ \end{center}
+ \end{minipage}
+ \begin{minipage}{0.325\hsize}
+ \begin{center}
+  \includegraphics[width=40mm]{Processing_img1-7.eps}
+ \end{center}
+ \end{minipage}
+\end{figure}
+
  \item \textbf{線を書く}: line(x1, y1, x2, y2);
        
        x1 = 始点のx座標、
