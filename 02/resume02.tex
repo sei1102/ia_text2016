@@ -183,16 +183,8 @@ Arduino を使うためにはシリアルポートの指定をしなければな
    arduino = new Arduino(this, Arduino.list()[5], 57600);
  }
 \end{lstlisting}
-すると、Processingの下部のコンソールに以下のようなメッセージが表示されます。
-%コンソールのメッセージ%
-\begin{lstlisting}
-/dev/tty.usbmodem1421
-\end{lstlisting}
-%Arduino のツール→シリアルポートからから確認することもできます。
 
-%Auduinoを起動し、下の画像のように、メニューバーにあるツール→シリアルポートを選択して、/dev/tty.usbmodem~から始まる番号をメモしておいてください。
-これで Processing から Arduino を制御するためのシリアルポートを知ることができます。
-これらの命令は今後も Arduino を用いる際に必ず使うので忘れないようにしてください。
+これで Processing から Arduino を用いるための準備は完了です。これらの命令は今後も Arduino を用いる際に必ず使うので忘れないようにしてください。
 
 \section{Digital Output}
 では、まず簡単なプログラムで動作を確認してみましょう。LEDが点灯するプログラムを作成してみましょう。Arduino側は、Digital Outの13番にLEDを接続しておきます。
