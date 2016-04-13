@@ -24,7 +24,7 @@
 %% header and footer
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{2015年度 春学期授業}
+\lhead{2016年度 春学期授業}
 \chead{インタラクティブ・アート実習}
 \rhead{担当教員: 松下 光範}
 \cfoot{\thepage}
@@ -91,12 +91,12 @@
 
 Processingのメニューから以下のライブラリを追加します。
 \begin{itemize}
-\item Sketch → Import Library... → Add Library...
+\item スケッチ → ライブラリをインポート... → ライブラリを追加...
 \end{itemize}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.75\columnwidth]{img/library01.eps}
+  \includegraphics[width=0.75\columnwidth]{img/eps/how_to_install_the_Firmata_library1.eps}
 %  \caption{}
   \label{figure:LED}
 \end{figure}
@@ -104,12 +104,12 @@ Processingのメニューから以下のライブラリを追加します。
 \newpage
 
 \begin{itemize}
-\item 図2のように検索バーで「arduino」と入力し、「Arduino(Firmata)」を選択します。
+\item 図2のように検索バーで「firmata」と入力し、「Arduino(Firmata)」を選択します。
 \end{itemize}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.75\columnwidth]{img/library02.eps}
+  \includegraphics[width=0.6\columnwidth]{img/eps/how_to_install_the_Firmata_library2.eps}
   %\caption{ライブラリ選択画面}
   \label{figure:switch}
 \end{figure}
@@ -183,16 +183,8 @@ Arduino を使うためにはシリアルポートの指定をしなければな
    arduino = new Arduino(this, Arduino.list()[5], 57600);
  }
 \end{lstlisting}
-すると、Processingの下部のコンソールに以下のようなメッセージが表示されます。
-%コンソールのメッセージ%
-\begin{lstlisting}
-/dev/tty.usbmodem1421
-\end{lstlisting}
-%Arduino のツール→シリアルポートからから確認することもできます。
 
-%Auduinoを起動し、下の画像のように、メニューバーにあるツール→シリアルポートを選択して、/dev/tty.usbmodem~から始まる番号をメモしておいてください。
-これで Processing から Arduino を制御するためのシリアルポートを知ることができます。
-これらの命令は今後も Arduino を用いる際に必ず使うので忘れないようにしてください。
+これで Processing から Arduino を用いるための準備は完了です。これらの命令は今後も Arduino を用いる際に必ず使うので忘れないようにしてください。
 
 \section{Digital Output}
 では、まず簡単なプログラムで動作を確認してみましょう。LEDが点灯するプログラムを作成してみましょう。Arduino側は、Digital Outの13番にLEDを接続しておきます。
@@ -220,7 +212,7 @@ Digital Output を使って LED を点灯させてみましょう。
  \end{minipage}
  \begin{minipage}{0.5\columnwidth}
   \centering
-  \includegraphics[width=80mm]{img/02_led.eps}
+  \includegraphics[width=80mm]{img/eps/02_led.eps}
   \caption{回路図}
  \end{minipage}
 \end{figure}
@@ -333,11 +325,11 @@ Arduino の Digital Input を用いてスイッチの ON/OFF を取得する。
 \begin{figure}[h!]
  \begin{minipage}{0.5\columnwidth}
   \centering
-  \includegraphics[width=0.7\columnwidth]{img/pullup.eps}
+  \includegraphics[width=0.7\columnwidth]{img/eps/pullup.eps}
  \end{minipage}
  \begin{minipage}{0.5\columnwidth}
   \centering
-  \includegraphics[width=0.7\columnwidth]{img/pulldown.eps}
+  \includegraphics[width=0.7\columnwidth]{img/eps/pulldown.eps}
  \end{minipage}
   \caption{プルアップ抵抗 (左) とプルダウン抵抗 (右)}
 \end{figure}
