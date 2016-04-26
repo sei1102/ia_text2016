@@ -164,7 +164,7 @@ Arduino arduino;
 int ledPin = 9; // LEDが接続されたピン番号
 
 void setup(){
-  arduino = new Arduino(this, Arduino.list()[5], 57600);
+  arduino = new Arduino(this, "/dev/tty.usbmodem1411", 57600);
   arduino.pinMode(ledPin, Arduino.OUTPUT);
 }
 
@@ -220,7 +220,7 @@ void draw(){
 
  void setup() {
    size(256, 256);
-   arduino = new Arduino(this, Arduino.list()[5], 57600);
+   arduino = new Arduino(this, "/dev/tty.usbmodem1411", 57600);
    arduino.pinMode(ledPin, Arduino.OUTPUT);
  }
 
@@ -300,7 +300,7 @@ int LED_G = 11;   // LED 緑
 
 void setup() {
   size(256, 256);
-  arduino = new Arduino(this, Arduino.list()[5], 57600);
+  arduino = new Arduino(this, "/dev/tty.usbmodem1411", 57600);
   //LEDのピンを出力に設定する
   arduino.pinMode(LED_R, Arduino.OUTPUT);
   arduino.pinMode(LED_B, Arduino.OUTPUT);
