@@ -205,7 +205,7 @@ Analog Input を使う場合は前述のように A0 〜 A5 ピンを用いる�
  void setup() {
    size(300, 300);
 
-   arduino = new Arduino(this, Arduino.list()[5]);
+   arduino = new Arduino(this, "/dev/tty.usbmodem1411");
    font = loadFont("Serif-48.vlw");
  }
 
@@ -278,7 +278,7 @@ int sensorPin = 0; // 曲げセンサを A0 番ピンに接続する場合
 void setup() {
   size(500,500);
   
-  arduino = new Arduino(this, Arduino.list()[5]);
+  arduino = new Arduino(this, "/dev/tty.usbmodem1411");
   img = loadImage("hogehoge.jpg"); // 使いたい画像ファイルの名前を指定
 }
 
