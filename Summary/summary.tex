@@ -24,7 +24,7 @@
 %% header and footer
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{2015年度 春学期授業}
+\lhead{2016年度 春学期授業}
 \chead{インタラクティブ・アート実習}
 \rhead{担当教員: 松下 光範}
 \cfoot{\thepage}
@@ -81,7 +81,7 @@
  void setup() {
    // COMポートの指定は各々異なるので、
    // デバイスマネージャなどで調べて変更する
-   arduino = new Arduino(this, Arduino.list()[5]);
+   arduino = new Arduino(this,  "/dev/tty.usbmodem1411");
 
    // inputPinをInputに
    ardino.pinMode(inputPin,  Arduino.INPUT);
@@ -103,6 +103,8 @@
  } 
 \end{lstlisting}
 
+\newpage
+
 \subsubsection*{Analog Input/Output}
 \begin{lstlisting}
  import processing.serial.*;
@@ -114,7 +116,7 @@
  int outputPin = 9; // PWMが使えるピンを選ぶ 
 
  void setup() {
-   arduino = new Arduino(this, Arduino.list()[5]);
+   arduino = new Arduino(this,  "/dev/tty.usbmodem1411");
 
    // Analog Input を使うときは Pin Mode の設定は必要ない
    // ardino.pinMode(inputPin,  Arduino.INPUT);
