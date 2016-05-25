@@ -47,7 +47,7 @@
   %[2][3]はプログラミング言語によってあったり、なかったり
   keywordstyle={[2]\color{colFunc}},
   keywordstyle={[3]\color{CadetBlue}},%
-  commentstyle={\color{Brown}},
+  commentstyle={\hspace{-1pt}\color{Brown}},
   %identifierstyle={\color{colID}},
   stringstyle=\color{blue},
   tabsize=2,
@@ -143,7 +143,7 @@ int motorPin = 9;   // モータが接続されたピン
  
 void setup() {
   size(255, 255);
-  arduino = new Arduino(this, Arduino.list()[5]);
+  arduino = new Arduino(this, "/dev/tty.usbmodem1411");
   arduino.pinMode(motorPin, Arduino.OUTPUT);   // モータのピンを出力に設定
 }
  
